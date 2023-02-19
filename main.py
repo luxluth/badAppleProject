@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from PIL import Image 
 import sys
 import os
@@ -45,10 +47,11 @@ def main(n_w: str="65"):
         print(ascii_img, end="\r")
         time.sleep(0.01)
 
-    # plt.imshow(matrix, cmap='gray')
-    # plt.colorbar()
-    # plt.show()
 
 if __name__ == "__main__":
     import sys
-    main(sys.argv[2]) if len(sys.argv) > 1 and sys.argv[1] == "-s" else main()
+    if "-h" in sys.argv:
+        print("Usage: main.py\n\t-s\t\tSpecify the width of to display\n\t-h\t\tShow this thing call 'help'\n")
+        
+    else:
+        main(sys.argv[2]) if len(sys.argv) > 1 and sys.argv[1] == "-s" else main()

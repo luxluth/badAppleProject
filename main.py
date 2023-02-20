@@ -28,7 +28,7 @@ def to_ascii(filepath: str, new_w=100):
     im = Image.open(filepath)
     return pixels_to_ascii(grayify(resize_image(im, new_w)))
 
-def main(n_w: str="65"):
+def main(n_w: str="65", t: float=0.01):
     """
     BAD APPLE
     =========
@@ -51,7 +51,28 @@ def main(n_w: str="65"):
 if __name__ == "__main__":
     import sys
     if "-h" in sys.argv:
-        print("Usage: main.py\n\t-s\t\tSpecify the width of to display\n\t-h\t\tShow this thing call 'help'\n")
+        print(
+        """Usage: main.py
+        \t-s\t\tSpecify the width of to display
+        \t-t\t\tThe interval between paints
+        \t-h\t\tShow this thing call 'help'\n""")
         
-    else:
-        main(sys.argv[2]) if len(sys.argv) > 1 and sys.argv[1] == "-s" else main()
+    elif "-s" in sys.argv:
+        try:
+            w = sys.argv[sys.argv.index("-s") + 1]
+        except Exception as e:
+            print(f"[ERROR] Arg size (-s) parsing: {e}")
+            sys.exit(1)
+        if "-t" in sys.argv:
+            try:
+                t = float(sys.argv[sys.argv.index("-h") + 1])
+            except Exception as e:
+                print(f"[ERROR] Arg time (-t) parsing: {e}")
+                sys.exit(1)
+
+            main(w, t)
+            sys.exit(0)
+
+        main(w)
+
+    main()

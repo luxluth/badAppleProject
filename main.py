@@ -56,7 +56,8 @@ if __name__ == "__main__":
         \t-s\t\tSpecify the width of to display
         \t-t\t\tThe interval between paints
         \t-h\t\tShow this thing call 'help'\n""")
-        
+        sys.exit(0)    
+
     elif "-s" in sys.argv:
         try:
             w = sys.argv[sys.argv.index("-s") + 1]

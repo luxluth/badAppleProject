@@ -12,8 +12,9 @@ The bad apple video display in the terminal using python
 
 ```bash
 Usage: main.py
-	-s		Specify the width of to display
-	-h		Show this thing call 'help'
+        	-s		Specify the width of to display
+        	-t		The interval between paints
+        	-h		Show this thing call 'help'
 ```
 
 ## Getting started

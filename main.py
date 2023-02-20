@@ -45,7 +45,7 @@ def main(n_w: str="65", t: float=0.01):
         pixel_count = len(data)
         ascii_img = "\n".join(data[i:(i+new_width)] for i in range(0, pixel_count, new_width))
         print(ascii_img, end="\r")
-        time.sleep(0.01)
+        time.sleep(t)
 
 
 if __name__ == "__main__":

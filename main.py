@@ -66,7 +66,7 @@ if __name__ == "__main__":
             sys.exit(1)
         if "-t" in sys.argv:
             try:
-                t = float(sys.argv[sys.argv.index("-h") + 1])
+                t = float(sys.argv[sys.argv.index("-t") + 1])
             except Exception as e:
                 print(f"[ERROR] Arg time (-t) parsing: {e}")
                 sys.exit(1)
